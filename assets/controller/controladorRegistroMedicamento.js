@@ -7,29 +7,29 @@ let cajaFechaCaducidad = document.getElementById('fechacaducidad')
 let cajaRegistroInvima = document.getElementById('invima')
 let cajaTieneCopago = document.getElementById('copago')
 
-let botonRegistroPaciente = document.getElementById("botonregistromedicamento")
+let botonRegistroMedicamento = document.getElementById("botonregistromedicamento")
 
 
 
-botonRegistroPaciente.addEventListener('click',(e) => {
+botonRegistroMedicamento.addEventListener('click',(e) => {
     e.preventDefault()
 
     let datosFormulario = {
         nombre:cajaNombre.value,
-        anioNacimiento:cajaFechaNacimiento.value,
-        ciudad:cajaCiudad.value,
-        telefono:cajaTelefono.value,
-        ips:cajaIPS.value,
-        tienePoliza:cajaAsegurado.value,
-        grupoIngreso:cajaGrupoIngreso.value,
-        fechaAfiliacion:cajaFechaAfiliacion.value,
+        presentacion:cajaPresentacion.value,
+        dosis:cajaDosis.value,
+        laboratorio:cajaLaboratorio.value,
+        fechaCaducidad:cajaFechaCaducidad.value,
+        contraindicaiones:cajaContraIndicaciones.value,
+        resgistroInvima:cajaRegistroInvima.value,
+        tieneCopago:cajaTieneCopago.value,
     }
     
     console.log(datosFormulario);
     
     Swal.fire({
         title: "Buen Trabajo",
-        text: "Ya haces parte de nuestra familia",
+        text: "Medicamento registrado con exito",
         icon: "success"
       });
 })
