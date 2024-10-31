@@ -1,7 +1,7 @@
 export let medicoSimulaciones = Array(
     {
         id:1,
-        nombre:'Marlon Mosquera Rivera',
+        nombre:'Marlon Mosquera ',
         matricula:'medico1',
         especialidad:'quiropractico',
         salario:5000000,
@@ -13,7 +13,7 @@ export let medicoSimulaciones = Array(
     },
     {
         id:2,
-        nombre:'Juan Jose Tobon',
+        nombre:'Juan  Tobon',
         matricula:'medico2',
         especialidad:'neurocirujano',
         salario:4500000,
@@ -59,9 +59,5 @@ export let medicoSimulaciones = Array(
         direccion:'cra 50 a # 85-98',
         estadisponiblefindesemana:true
     },
- 
- 
- 
- 
  
 )
