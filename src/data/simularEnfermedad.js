@@ -6,5 +6,50 @@ export let enfermedadSimulaciones = Array(
         clasificacion:'leve',
         grado:'bajo',
         probabilidadVivir:'1'
+    },
+    {
+        id:1,
+        nombre:'asma',
+        sintomas:'dificultad para respirar',
+        clasificacion:'leve',
+        grado:'bajo',
+        probabilidadVivir:'1'
+    },
+
+    {
+        id:1,
+        nombre:'asma',
+        sintomas:'dificultad para respirar',
+        clasificacion:'leve',
+        grado:'bajo',
+        probabilidadVivir:'1'
+    },
+
+    {
+        id:1,
+        nombre:'asma',
+        sintomas:'dificultad para respirar',
+        clasificacion:'leve',
+        grado:'bajo',
+        probabilidadVivir:'1'
+    },
+
+    {
+        id:1,
+        nombre:'asma',
+        sintomas:'dificultad para respirar',
+        clasificacion:'leve',
+        grado:'bajo',
+        probabilidadVivir:'1'
+    },
+
+    {
+        id:1,
+        nombre:'asma',
+        sintomas:'dificultad para respirar',
+        clasificacion:'leve',
+        grado:'bajo',
+        probabilidadVivir:'1'
     }
+
 )
