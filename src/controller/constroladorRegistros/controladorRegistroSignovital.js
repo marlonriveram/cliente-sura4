@@ -1,3 +1,5 @@
+import { Post } from "../fecth.mjs"
+
 let cajaNombre = document.getElementById('nombresignovital')
 let cajaValor = document.getElementById('valorsignovital')
 let cajafechaMedicacion = document.getElementById('fechamedicionsignovital')
@@ -17,11 +19,13 @@ botonRegistroSignovital .addEventListener('click',(e) => {
         fechaMedida:cajafechaMedicacion.value,
     }
     
-    console.log(datosFormulario);
-    
-    Swal.fire({
-        title: "Buen Trabajo",
-        text: "Signo vital registrado con exito",
-        icon: "success"
-      });
+    Post('http://localhost:8080/api/signosvitales', datosFormulario)
+    .then(signovital => {
+        console.log(signovital); 
+        Swal.fire({
+            title: "Buen Trabajo",
+            text: "Signo vial registrado con exito",
+            icon: "success"
+        });
+    })
 })

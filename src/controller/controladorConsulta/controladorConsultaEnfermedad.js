@@ -1,9 +1,12 @@
 import{ enfermedadSimulaciones } from "../../data/simularEnfermedad.js"
+import { Get } from "../fecth.mjs"
 
 let fila = document.getElementById('fila')
 
-// debo recorrer los datos de la BD para pintarlos
-enfermedadSimulaciones.forEach((enfermedad) =>{
+Get('http://localhost:8080/api/enfermedad')
+.then(data =>{
+    // debo recorrer los datos de la BD para pintarlos
+ data.forEach((enfermedad) =>{
    
     //APLICANDO TRAVESING
 
@@ -69,4 +72,5 @@ enfermedadSimulaciones.forEach((enfermedad) =>{
     tarjeta.appendChild(editar)
     columna.appendChild(tarjeta)
     fila.appendChild(columna)
+})
 })

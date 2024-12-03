@@ -1,10 +1,14 @@
 import{ medicamentoSimulaciones } from "../../data/simularMedicamento.js"
+import { Get } from "../fecth.mjs"
 
 
 let fila = document.getElementById('fila')
 
-// debo recorrer los datos de la BD para pintarlos
-medicamentoSimulaciones.forEach((medicamento) =>{
+Get('http://localhost:8080/api/medicamento')
+.then(data =>{
+    console.log(data)
+    // debo recorrer los datos de la BD para pintarlos
+    data.forEach((medicamento) =>{
     
     //APLICANDO TRAVESING
 
@@ -39,7 +43,7 @@ medicamentoSimulaciones.forEach((medicamento) =>{
 
     let etiquetaContraIndicaciones = document.createElement("p")
     etiquetaContraIndicaciones.classList.add("text-start")
-    etiquetaContraIndicaciones.textContent = "Contraindiaciones: " + medicamento.contraindicaciones
+    etiquetaContraIndicaciones.textContent = "Contraindiaciones: " + medicamento.contraindicaiones    
 
     let etiquetaFechaCaducidad = document.createElement("p")
     etiquetaFechaCaducidad.classList.add("text-start")
@@ -87,4 +91,5 @@ medicamentoSimulaciones.forEach((medicamento) =>{
     tarjeta.appendChild(editar)
     columna.appendChild(tarjeta)
     fila.appendChild(columna)
+})
 })

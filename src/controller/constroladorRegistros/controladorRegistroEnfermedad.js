@@ -1,3 +1,5 @@
+import { Post } from "../fecth.mjs"
+
 let cajaNombre = document.getElementById('nombreenfermedad')
 let cajaSintomas = document.getElementById('sintomas')
 let cajaClasificacion = document.getElementById('clasificacionenfermedad')
@@ -20,11 +22,13 @@ botonRegistroEnfermedad.addEventListener('click',(e) => {
         probabilidadVivir:cajaProbabilidadSobrevivir.value,
     }
     
-    console.log(datosFormulario);
-    
-    Swal.fire({
-        title: "Buen Trabajo",
-        text: "Enfermedad registrada con exito",
-        icon: "success"
-    });
+    Post('http://localhost:8080/api/enfermedad', datosFormulario)
+    .then(enfermedad => {
+        console.log(enfermedad); 
+        Swal.fire({
+            title: "Buen Trabajo",
+            text: "Enfermedad registrado con exito",
+            icon: "success"
+        });
+    })
 })

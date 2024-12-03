@@ -1,3 +1,5 @@
+import { Post } from "../fecth.mjs"
+
 let cajaNombre = document.getElementById('nombremedicamento')
 let cajaPresentacion = document.getElementById('presentacionmedicamento')
 let cajaDosis = document.getElementById('dosismedicamento')
@@ -22,14 +24,16 @@ botonRegistroMedicamento.addEventListener('click',(e) => {
         fechaCaducidad:cajaFechaCaducidad.value,
         contraindicaiones:cajaContraIndicaciones.value,
         resgistroInvima:cajaRegistroInvima.value,
-        tieneCopago:cajaTieneCopago.value,
+        // tieneCopago:cajaTieneCopago.value,
     }
     
-    console.log(datosFormulario);
-    
-    Swal.fire({
-        title: "Buen Trabajo",
-        text: "Medicamento registrado con exito",
-        icon: "success"
-      });
+    Post('http://localhost:8080/api/medicamento', datosFormulario)
+    .then(medicamento => {
+        console.log(medicamento); 
+        Swal.fire({
+            title: "Buen Trabajo",
+            text: "Medicamento registrado con exito",
+            icon: "success"
+        });
+    })
 })

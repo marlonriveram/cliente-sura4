@@ -1,3 +1,5 @@
+import { Post } from "../fecth.mjs"
+
 let cajaNombre = document.getElementById('nombremedico')
 let cajaMatricula = document.getElementById('matriculamedico')
 let cajaEspecialidad = document.getElementById('especialidadmedico')
@@ -24,14 +26,16 @@ botonRegistroMedico.addEventListener('click',(e) => {
         correo:cajaCorreo.value,
         telefono:cajaTelefono.value,
         direccion:cajaDireccion.value,
-        estadisponibleFinDeSemana:cajaTrabajaFinesdeSemana.value,
+        // estadisponibleFinDeSemana:cajaTrabajaFinesdeSemana.value,
     }
     
-    console.log(datosFormulario);
-    
-    Swal.fire({
-        title: "Buen Trabajo",
-        text: "Ya haces parte de nuestra familia",
-        icon: "success"
-      });
+    Post('http://localhost:8080/api/medico', datosFormulario)
+    .then(medico => {
+        console.log(medico); 
+        Swal.fire({
+            title: "Buen Trabajo",
+            text: "Bienvenido a sura",
+            icon: "success"
+        });
+    })
 })

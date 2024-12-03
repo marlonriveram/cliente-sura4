@@ -1,10 +1,13 @@
 import{ signovitalSimulaciones } from "../../data/signoVital.js"
+import { Get } from "../fecth.mjs"
 
 
 let fila = document.getElementById('fila')
 
-// debo recorrer los datos de la BD para pintarlos
-signovitalSimulaciones.forEach((signovital) =>{
+Get('http://localhost:8080/api/signosvitales')
+.then(data =>{
+    // debo recorrer los datos de la BD para pintarlos
+    data.forEach((signovital) =>{
     
     //APLICANDO TRAVESING
 
@@ -45,9 +48,6 @@ signovitalSimulaciones.forEach((signovital) =>{
        
     let iconoEditar = document.createElement("i")
     iconoEditar.classList.add("bi","bi-pencil-fill")
-   
-
-
 
 
     //Paso final -- ASOCIO LAS ETIQUETAS
@@ -61,4 +61,5 @@ signovitalSimulaciones.forEach((signovital) =>{
     tarjeta.appendChild(editar)
     columna.appendChild(tarjeta)
     fila.appendChild(columna)
+})
 })
